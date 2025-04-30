@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Dias</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1d0618;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #240225;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff6347;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        #count {
+            color: #ff6347;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .hearts-line {
+            margin: 20px 0;
+            font-size: 30px;
+            animation: float 2s infinite alternate;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .photos {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .photo {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff6347;
+        }
+
+.message {
+    position: relative;
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    background: #20012963;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    animation: rise 5s infinite linear;
+}
+
+.message:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #1e0222;
+}
+
+.baloon {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1b021d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="baloon">
+            <h1>Quantos dias de namoro!</h1>
+            <p>Hoje faz <span id="count1" class="highlight"></span> dias que estamos juntos!</p>
+        </div>
+        <div class="baloon">
+            <h1>Mensagens de amor</h1>
+            <p>Eu te amo muito minha princesa! e espero que a cada você continue sendo a minha princesa.</em> 💖</p>
+        
+        </div>
+        <div class="baloon">
+            <h1>29/09/2024</h1>
+            <p> Foi nessa data que começou <span id="count2" class="highlight"></span> uma grande jornada pela frente!</p>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quantos dias de namoro!</h1>
+        <p>Hoje faz <span id="count"></span> dias que estamos juntos!</p>
+        <div class="hearts-line">
+            <span class="heart">❤️</span>
+            <span class="heart">💖</span>
+            <span class="heart">💘</span>
+            <span class="heart">💕</span>
+            <span class="heart">❤️</span>
+        </div>
+        <div class="photos">
+            <img src="guilhermebr.jpg" alt="Foto 1" class="photo">
+            <img src="mirelabr.jpg" alt="Foto 2" class="photo">
+            <img src="mirelalinda.jpg" alt="Foto 3" class="photo">
+        </div>
+    </div>
+    <div class="message">
+        <p>Minha frase especial para você: <br><span id="specialMessage">Você é o melhor presente que a vida me deu! ❤️</span></p>
+    </div>
+</div>
+<footer>
+  Desenvolvido com carinho por Guilherme Marques
+</footer>
+
+    <script>
+        // Definir a data de início do namoro
+        const dataInicioNamoro = new Date("2024-09-29"); // Alterar para a data do seu namoro
+
+        // Função para calcular a diferença em dias
+        function calcularDias() {
+            const hoje = new Date();
+            const diffTime = hoje - dataInicioNamoro;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            document.getElementById("count").textContent = diffDays;
+        }
+
+        // Chama a função assim que o site carregar
+        window.onload = calcularDias;
+    </script>
+</body>
+</html>
